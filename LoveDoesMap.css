@@ -1,0 +1,261 @@
+/* Specifications of CSS */
+
+/* Further down in the document wins styling hierarchy */
+
+/* HIERARCHY - More weight to least weight*/
+/* In-line */
+/* ID */
+/* class or attribute */
+
+
+/* Look at this to compare: https://lovedoes.org/our-story/"*/
+
+
+body{ /* Sets background of HTML web page - could replace with more dynamic image later */
+    /*background-color: #FFF; --- If I wanted background color of white instead */
+    background-image: url("BackgroundImage/BottomFrameImage.png");
+    margin:0px; /*making it so that the body content has no margins*/
+}
+
+/* NAVIGATION BAR */
+/* Setting the symbology of the navigation bar */
+header {
+    background-color: #107595;
+    padding: 10px 0px; /* Sets thickness of the padding above - 30px - the tonav text within it */
+    width: 100%;
+}
+
+.topnav { /* setting symbology by class = "topnav"
+                This is the background of the different sections*/
+    overflow: hidden;
+    background-color: #107595;
+    margin-top: 20px;
+    height: 60px;
+    text-align: center;
+  }
+
+
+  /* COMMENTING OUT FOR NOW TO TEST OTHER WAY, THIS CONTROLLED THE TEXT 
+  .topnav a { Within the class "topnav" there is a <a> divider - that contains the links 
+                    this will set the symbology for the TEXT of those links
+    color: white;
+    font-size: 32px;
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center; 
+    padding: 50px 30px;
+    font-size: 25px;
+    margin: 100px 20px;  Moves all text to center - aligns text as elements? ---
+    margin-top: 25%;}*/
+
+  /* HOVER OVER the navigation bar
+  .topnav a:hover{
+    color:white;
+    text-decoration: underline;
+    text-decoration-color: #F59438;
+    padding: 40px 30px;
+  }  */
+
+  /* Setting image formatting for image within the topnav class*/
+.topnav img{
+    float:center;
+    }
+.topnav ul {
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    display:inline-block;
+    vertical-align:top;
+    }
+      
+.topnav li {
+    list-style-type: none;
+    padding: 0px;
+    height: 24px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    display: inline;
+    overflow: hidden; /*hiding the overflow underline*/
+
+    text-decoration: none;
+
+    /* Setting a "background" for the text, this is going to act as an underline for the text */
+    /*background-image: linear-gradient(white, white); /* Setting the colors of the line/background */
+   /*background-size: 0% 0.25em; 
+    background-position-y: 120%;
+    background-position-x: 0%;
+    background-repeat: no-repeat;
+    transition: background-size 0.35s ease-in-out;*/
+}
+
+    /* Setting the formatting of the navigation bar text*/
+.topnav li a {
+    color: white;
+    font-size: 20px;
+    font-family: "Zen Maru Gothic", serif;
+    text-decoration: none;
+    font-weight: 550;
+    font-style: normal;
+    text-align: center; 
+    padding: 25px 25px; /* Might not need, sets padding between the items in the list*/
+    margin: 100px 20px; /* Moves all text to center - aligns text as elements?*/
+}
+
+.topnav li:hover,
+.topnav li:focus,
+.topnav li:active {
+/*background-size: 120% 0.25em;*/
+text-decoration: underline;
+text-underline-offset: 3px;
+text-decoration-color: white;
+text-underline-position: left;
+}
+
+/* Used this cite for guidence */
+/* https://css-irl.info/animating-underlines/ */
+
+/* SEARCH BAR */
+.topnav input[type=text] {
+    float: right;
+    padding: 8px;
+    margin-top: 17px;
+    margin-right: 16px;
+    border: none;
+  }
+/*----------------------------------------------------------*/
+
+/* ALL SVG ELEMENTS ARE WITHIN THE CONTENT CLASS */
+.content {
+    padding: 0; /* adjust based on how thick the nav bar ends up being*/
+    text-align: center;
+}
+
+/*  MAP SYMBOLOGY */
+path {
+    stroke: white;
+    stroke-width: 1.25;
+    fill:#0B8FA9;
+    position: relative;
+    z-index: -2;
+}
+
+#select {    /* Setting formatting for all countries LoveDoes has worked in*/       
+    fill: #90d6e4 !important;
+    transition: transform 1s ease;
+}
+
+#select:hover{ /* Setting formatting for all countries LoveDoes has worked in*/
+    stroke: #194E78;
+    stroke-width: 2;
+}
+
+/* Tutorial on how to scale up (AKA - "Pop out") with hover effect */ 
+/*https://www.youtube.com/watch?v=1zDRqHifoX0*/ 
+
+/* Helped with Transform (aka pop out effect) https://www.w3schools.com/Css/css3_2dtransforms.asp */ 
+
+/* Hover symbology for USA is contained with the group tag so all of the elements move as one*/
+/*Search that helped me figure out element grouping: 
+    https://www.bing.com/search?q=how+to+add+a+hover+effect+onto+a+group+in+css&qs=GS&pq=how+to+add+a+hover+effect+onto+a+group&sk=GS5&sc=12-38&cvid=FE078BEB5B6C4C6E8742C0D9B9A79A6B&FORM=QBRE&sp=6&ghc=1&lq=0
+    Also: https://www.w3schools.com/CSSref/sel_hover.php*/
+    g:hover > .USA {
+    transform: translate(-22px, -22px);
+    
+    /* Same formatting as all elements/countries with the #select tag*/
+    transition: transform 1s ease;
+    stroke: #194E78;
+    stroke-width: 2;
+}
+
+path.Afghanistan:hover {
+    transform: translate(-12px, -12px);
+}
+
+path.Burkina-Faso:hover {
+    transform: translate(-8px, -8px);
+}
+
+path.Congo:hover {
+    transform: translate(-15px, -15px);
+}
+
+path.Dominican-Republic:hover {
+    transform: translate(-3px, -3px);
+}
+
+path.India:hover {
+    transform: translate(-12px, -12px);
+}
+
+path.Iraq:hover {
+    transform: translate(-10px, -10px);
+}
+
+path.Israel:hover {
+    transform: translate(-4px, -4px);
+}
+
+path.Mexico:hover {
+    transform: translate(-15px, -15px);
+}
+
+path.Nepal:hover {
+    transform: translate(-8px, -8px);
+}
+
+path.Poland:hover {
+    transform: translate(-10px, -10px);
+}
+
+path.Somalia:hover {
+    transform: translate(-8px, -7px);
+}
+
+path.Uganda:hover {
+    transform: translate(-8px, -7px);
+}
+
+path.Ukraine:hover {
+    transform: translate(-10px, -10px);
+}
+
+#world-map { /* This is an ID selector: used to select a single element with a unique id*/
+    display: block;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* County Pop-Up Font */
+.zen-maru-gothic-medium {
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+/* Setting formatting of pop-up box for when counties are hovered over */
+#details-box { 
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 32px;
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 500;
+    font-style: normal;
+    position: fixed;
+    color: white;
+    background-color: black;
+    width: fit-content;
+    transform: translateX(-50%);
+    transition: opacity .25s ease;
+    z-index: 4;
+}
+
+/* Creating a tag (#) called select, shifts all countries that are selected west... */
+
+/* #SELECT would override all of the individual path.Mexico etc... tags */ 
+    /* I think we need individual tags to specify the hover function - need different extent for each country*/
+
+/* We'd be able to select all selected countries, 
